@@ -1,0 +1,447 @@
+/* 
+    CASCADING STYLESHEET
+*/
+
+/*trabalha com seletores */
+
+/* ALINHAMENTOS, ESPAÇAMENTOS
+LARGURAS E ALTURAS*/
+
+
+* {
+    /*corrigindo o comportamento padrão do css sobre o padding aumentar a 
+    largura de 100%*/
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+/*tirar a margem padrão que o navegador já utiliza*/
+html,body {
+    margin: 0
+}
+
+
+
+
+
+
+
+/*cor dos títulos*/
+h1, h2 {
+    color: #000000cc;
+}
+
+
+
+
+
+
+
+
+body {
+    display: flex; /*faz em linha ou coluna*/
+    flex-direction: column;
+
+    height: 100vh; /*tudo o que você está vendo na tela*/
+
+    /*fonte(foi importada dentro do head do index.html)*/
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*TÍTULOS*/
+header .h1, main .h2 {
+    margin-bottom: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+main h2 span {
+    color: #ff4f4f;
+}
+
+
+
+
+
+
+
+
+
+
+
+main h2 {
+    margin-bottom:40px ;
+}
+
+
+
+
+
+
+
+
+
+
+
+.form h2 {
+    text-align: right;
+    color: #ffffffee;
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*ESTRUTURAS*/
+header, main, footer {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+header, .form, main {
+    /*espaçamento com margem*/
+    /* margem em cima - dos lados - embaixo*/
+    margin:0 auto 70px auto; /*margem abaixo de cada seletor 
+    que foi colocado*/
+
+    /*limites dos elementos*/
+    width: 90%; /*largura*/
+    max-width: 500px; /*largura máxima*/
+}
+
+
+
+
+
+
+
+
+
+
+/* HEADER */
+
+header button {
+    margin-top: 16px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    
+
+    background-color: #ff4f4f;
+    color: white;
+
+    /*peso na fonte*/
+    font-weight: bold;
+
+}
+
+
+
+
+
+
+
+
+
+
+header img.logo {
+    width: 120px;
+    margin: 70px 0px ;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+header p {
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*FORMULÁRIO*/
+
+section.form { /*poderia colocar ".form" apenas*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    /*espaçamento através do grid*/
+    grid-gap: 45px;
+    align-items: center;
+    
+    background-color: #ff4f4f;
+    padding: 16px 64px;
+    border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*botão e inputs do formulário*/
+
+form input, 
+form button {
+    /*largura*/
+    width: 100%;
+
+    /*espaçamentos*/
+    margin-bottom: 4px;
+
+
+    /*Preenchimento dos campos dos botôes e input*/
+    padding: 8px 16px;
+
+    /*padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;*/
+    
+    /*Arredondamento das bordas*/
+    border-radius: 4px;
+    border: 1px #ffffff88 solid; /*grossura - cor - estilo */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+form input {
+    background-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+/*Selecionar o placeholder de dentro do input*/
+form input::placeholder {
+    color: #ffffffaa;
+}
+
+
+
+
+
+
+
+
+
+
+
+form button {
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+/*ACESSA A CLASS DONORS DENTRO DO MAIN POR CASCATA*/
+
+main .donors { /*acessando a section com class = "donors"*/
+    display: grid; /*como o conteúdo é apresentado na tela (linhas e colunas)*/
+    grid-template-columns: 1fr 1fr 1fr 1fr; /*número de colunas*/
+/*1fr torna o espaçamento entre colunas flexível*/
+}
+
+
+
+
+
+
+
+
+
+
+main section div .blood {
+    color: #ff4f4f;
+    font-weight: bold;
+    font-size: 12px;
+
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*elemento html criado pelo css para poder ser modificado*/
+.blood::before {
+    content: "";
+    background-color: #ff4f4f11;
+
+    width: 40px;
+    height: 40px;
+
+    /*criando uma nova camada*/
+    position: absolute;
+    
+
+    /*fazer a gotinha*/
+    border-radius: 50%;
+    border-top-right-radius: 0;
+
+
+    /*girar o elemento */
+    transform: rotate(-45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.donor p {
+    margin-top:24px;
+    margin-bottom: 64px;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    margin-top: auto;
+    padding: 16px;
+    border: 1px solid #eee;
+}
+
+
+
+
+
+
+
+
+
+
+/*transição quando clica no botao*/
+section.form {
+    transition: all 500ms;
+}
+
+
+
+
+
+
+
+/*funcionalidades com javascript*/
+section.form.hide {
+    opacity: 0; /*opaco*/
+    visibility: hidden;
+    height: 0; /*altura*/
+    margin-top: -70px;
+}
