@@ -17,7 +17,7 @@
 <head>
     <!--são configuraçõs da minha página-->
     <title>Doe vida, doe sangue!</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/public/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
@@ -29,7 +29,7 @@
     <header>
         <img 
          class = "logo"
-            src="/logo.png"
+            src="/public/logo.png"
             alt="Imagem de Doe"
         >
         <!--titulo-->
@@ -72,10 +72,7 @@
         <h2>Últimos <span>doadores</span> </h2>
 
         <section class="donors">
-
-            
           {% for donor in donors %} <!--nunjucks-->
-
                 <div class = "donor">
                     <div class = "blood"> {{donor.blood}} </div>
                     <p>{{donor.nome}}</p>
