@@ -331,7 +331,10 @@ main .donors { /*acessando a section com class = "donors"*/
 
 
 
-
+main {
+    border: solid 3px rebeccapurple;
+    border-radius: 30px;
+}
 
 
 
